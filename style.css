@@ -1,0 +1,63 @@
+body {
+    background-color:#ffffe6;
+    font-family: 'Arial', serif;
+    padding:2em 6em;
+}
+h1{
+    color:#000000;
+    text-align:center;
+}
+input {
+    position: absolute;
+    opacity: 0;
+}
+/*--------Accordion-------*/
+.tabs {
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+}
+.tab{
+    overflow: hidden;
+}
+
+.tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: #7e1887;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tab-label:hover{
+    color: darkorange;
+
+}
+.tab-label:hover + .tab-content
+{
+    max-height: 100vh;
+    padding: 1em;
+}
+
+
+.tab-label::after {
+    content: '\002B';
+    transition: all .35s;
+}
+
+.tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: #2c3e50;
+    background: white;
+    transition: all .35s;
+}
+
+input:checked + .tab-label::after{
+    transform: rotate(45deg);
+}
+input:checked ~ .tab-content{
+    max-height: 100vh;
+    padding: 1em;
+}
